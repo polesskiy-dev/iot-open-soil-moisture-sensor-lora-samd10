@@ -4617,7 +4617,7 @@
     (property "Value" "BAT60A" (at 52.07 20.32 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering" (at 52.07 20.955 0)
+    (property "Footprint" "Diode_SMD:D_SOD-323" (at 52.07 20.955 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://www.infineon.com/dgdl/Infineon-BAT60ASERIES-DS-v01_01-en.pdf?fileId=db3a304313d846880113def70c9304a9" (at 52.07 25.4 0)
