@@ -1,0 +1,108 @@
+
+(rules PCB iot-open-soil-moisture-sensor-lora-samd10
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 8)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.5)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clear 200.0)
+    (clear 100.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd-smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-PWR" "Via[0-1]_800:400_um" PWR
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    PWR "Via[0-1]_800:400_um-PWR"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(BT1-+)" ~RESET XIN32 XOUT32 "BAT_ADC" VDD LED "Net-(D1-A)"
+    "Net-(D2-A)" "Net-(Q1-D)" +3V0 SWDIO SWDCLK "unconnected-(J1-SWO{slash}TDO-Pad6)" "unconnected-(J1-KEY-Pad7)" "unconnected-(J1-NC{slash}TDI-Pad8)"
+    SDA1 SCL1 SDA2 SCL2 "Net-(Q1-G)" "Net-(Q2-Pad2)" "BAT_ADC_EN" "Net-(Q2-Pad6)"
+    "~{LORA_RESET}" "LORA_IRQ" MOSI SCK MISO "~{LORA_CS}" "unconnected-(U4-DIO1-Pad6)" "unconnected-(U4-DIO2-Pad7)"
+    "unconnected-(U4-DIO3-Pad8)" "unconnected-(U4-DIO4-Pad10)" "unconnected-(U4-DIO5-Pad11)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class PWR
+    +3V3
+    (clearance_class PWR)
+    (via_rule PWR)
+    (rule
+      (width 300.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class class1
+    GND
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
