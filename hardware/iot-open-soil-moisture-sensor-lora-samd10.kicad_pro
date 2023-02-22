@@ -484,7 +484,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "iot-open-soil-moisture-sensor-lora-samd10.dsn",
-      "step": "",
+      "step": "iot-open-soil-moisture-sensor-lora-samd10.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
